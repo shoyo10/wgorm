@@ -1,0 +1,24 @@
+database:
+  driver: postgres
+  max_idle_conns: 10
+  max_open_conns: 20
+  conn_max_life_time_sec: 3600
+  master:
+    host: 127.0.0.1
+    port: 32780
+    username: postgres
+    password: my_password
+    dbname: my_database
+    search_path: public
+  slave:
+    - host: 127.0.0.1
+      port: 32781
+      username: postgres
+      password: my_password
+      dbname: my_database
+      search_path: public
+  log:
+    log_level: 4
+    slow_threshold_ms: 1000
+    ignore_record_not_found_error: false
+    colorful: true
